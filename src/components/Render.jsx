@@ -4,6 +4,7 @@ import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
 import { useBlock } from "../hooks/useBlock";
 import Block from "./Block";
+import Sidebar from "./Sidebar";
 
 export default function Render() {
   const { blocks, setBlocks, addBlock, removeBlock } = useBlock();
@@ -16,15 +17,8 @@ export default function Render() {
 
   return (
     <div style={{ display: "flex" }}>
-      <div className="sidebar">
-      <button
-        onClick={addBlock}
-        style={{ padding: "10px 20px", margin: "10px" }}
-      >
-        +
-      </button>
-      </div>
-      <div style={{ display: "inline-block", height: "calc(100vh - 100px)" }}>
+      <Sidebar onAddBlock={addBlock} />
+      <div className="grid">
         <GridLayout
           layout={layout}
           onLayoutChange={(newLayout) =>
@@ -42,21 +36,15 @@ export default function Render() {
           preventCollision={true}
         >
           {blocks.map((block) => (
-            <div
-              key={block.id}
-              style={{
-                background: "#",
-                border: "2px solid #FDF0D5",
-                borderRadius: "5px",
-                position: "relative",
-              }}
-            >
+            <div className="block" key={block.id}>
               <button
                 onClick={() => removeBlock(block.id)}
-                style={{ position: "absolute", top: "5px", right: "5px" }}
+                className="button-x"
+                role="button"
               >
                 ✕
               </button>
+              <div className="move-sign">+</div>
             </div>
           ))}
         </GridLayout>
