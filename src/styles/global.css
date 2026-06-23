@@ -1,0 +1,22 @@
+body {
+  background-color: #3a3335;
+  color: #c6d8d3;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  width: 100%;
+}
+.responsive-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  border-radius: 10px;
+  border-color: #3f4045;
+  border-width: 2px;
+  border-style: solid;
+}
+.sidebar {
+  border-radius: 10px;
+  border: "2px solid #FDF0D5";
+  border-width: 2px;
+  border-style: solid;
+}
