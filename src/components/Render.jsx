@@ -5,6 +5,7 @@ import "react-resizable/css/styles.css";
 import { useBlock } from "../hooks/useBlock";
 import Block from "./Block";
 import Sidebar from "./Sidebar";
+import { Expand } from "lucide-react"
 
 export default function Render() {
   const { blocks, setBlocks, addBlock, removeBlock } = useBlock();
@@ -44,7 +45,7 @@ export default function Render() {
               >
                 ✕
               </button>
-              <div className="move-sign">+</div>
+              <div className="move-sign"><Expand color="#c6d8d3" size={15} /></div>
             </div>
           ))}
         </GridLayout>
