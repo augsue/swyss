@@ -1,5 +1,6 @@
 import { AArrowUp, AArrowDown } from "lucide-react";
 import { useState } from "react";
+import ToDoList  from "./ToDoList";
 
 const Block = ({ id, type, content, onChange, onRemove }) => {
   const [fontSize, setFontSize] = useState(14);
@@ -19,12 +20,21 @@ const Block = ({ id, type, content, onChange, onRemove }) => {
           <button
             className="font-button a-down"
             onClick={() => setFontSize((f) => Math.max(8, f - 2))}
-          ><AArrowDown /></button>
+          >
+            <AArrowDown />
+          </button>
           <button
             className="font-button a-up"
             onClick={() => setFontSize((f) => Math.min(40, f + 2))}
-          ><AArrowUp /></button>
+          >
+            <AArrowUp />
+          </button>
         </div>
+      );
+    }
+    if (type === "todo") {
+      return (
+        <div> <ToDoList /> </div>
       );
     }
 
