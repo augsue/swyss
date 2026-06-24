@@ -4,16 +4,26 @@ export const useBlock = () => {
   const [blocks, setBlocks] = useState([]);
 
   // Adiciona bloco
-  const addBlock = () => {
+  const addBlock = (type) => {
     const newBlock = {
       id: Date.now().toString(),
+      type,
       x: 0,
       y: 0,
       w: 5,
-      h: 2.5,
+      h: 2.2,
+      content: "",
     };
     setBlocks([...blocks, newBlock]);
   };
+  // Adiciona Conteudo
+ const updateBlockContent = (id, newContent) => {
+   setBlocks(
+    blocks.map((block) =>
+     block.id === id ? { ...block, content: newContent } : block
+    )
+   )
+ }
 
   // Remove bloco
   const removeBlock = (id) => {
@@ -26,5 +36,5 @@ export const useBlock = () => {
     i: block.id,
   }));
 
-  return { blocks, setBlocks, addBlock, removeBlock };
+  return { blocks, setBlocks, addBlock, removeBlock, updateBlockContent };
 };

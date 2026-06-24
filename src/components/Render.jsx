@@ -8,7 +8,7 @@ import Sidebar from "./Sidebar";
 import { Expand } from "lucide-react"
 
 export default function Render() {
-  const { blocks, setBlocks, addBlock, removeBlock } = useBlock();
+  const { blocks, setBlocks, addBlock, removeBlock, updateBlockContent } = useBlock();
 
   // Converte pro formato do GridLayout
   const layout = blocks.map((block) => ({
@@ -23,8 +23,13 @@ export default function Render() {
         <GridLayout
           layout={layout}
           onLayoutChange={(newLayout) =>
-            setBlocks(
-              newLayout.map(({ i, x, y, w, h }) => ({ id: i, x, y, w, h })),
+            setBlocks((prevBlocks) => 
+              prevBlocks.map((block) => {
+                const layoutItem = newLayout.find((item) => item.i === block.id);
+                return layoutItem
+                  ? {...block, x: layoutItem.x, y: layoutItem.y, w: layoutItem.w, h: layoutItem.h}
+                  : block
+              })
             )
           }
           maxCols={4}
@@ -32,8 +37,8 @@ export default function Render() {
           rowHeight={50}
           isDraggable={true}
           isResizable={true}
-          width={window.innerWidth}
-          heigth={window.innerHeight}
+          width={1850}
+          heigth={30}
           preventCollision={true}
         >
           {blocks.map((block) => (
@@ -45,6 +50,13 @@ export default function Render() {
               >
                 ✕
               </button>
+              <Block
+                key={block.id}
+                id={block.id}
+                type={block.type} 
+                content={block.content}
+                onChange={(newContent) => updateBlockContent(block.id, newContent)}
+              />
               <div className="move-sign"><Expand color="#c6d8d3" size={15} /></div>
             </div>
           ))}

@@ -3,10 +3,13 @@ body {
   color: #c6d8d3;
   font-family: Arial, sans-serif;
   font-size: 10px;
+  margin: 0;
   width: 100%;
+  height:100%;
 }
 .sidebar {
   width: 70px;
+  box-sizing: border-box;
   height: calc(100vh - 40px);
   border: 2px solid #3c3c3c;
   border-radius: 12px;
@@ -69,11 +72,22 @@ body {
     rgba(0, 0, 0, 0.12) 0px -3px 5px,
     0 0 0 1px rgba(255, 255, 255, 0.05);
 }
-
+.block-textarea {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  color: #c6d8d3;
+  font-family: Arial, sans-serif;
+  padding: 12px;
+  box-sizing: border-box;
+}
 .grid {
   margin-left: 110px;
-  margin-top: 20px;
-  margin-right: 20px;
+  margin-top: 10px;
+  margin-right: 20pxnpm ru;
 }
 .button-x {
   all: unset;
@@ -149,4 +163,29 @@ body {
   right: 5px;
   bottom: 5px;
   font-size: 17px;
+}
+.note-toolbar {
+  display: flex;
+  gap: 6px;
+  padding: 6px 8px;
+  width: 100%;
+  height: 100%;
+}
+
+.font-button {
+  position: absolute;
+  right: 0px;
+  background-color: #1e1e1e;
+  border: none;
+  color: #c6d8d3;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+.a-down {
+  bottom: 30px;
+}
+.a-up {
+  bottom: 60px;
 }
