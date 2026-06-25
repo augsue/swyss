@@ -45,7 +45,18 @@ const Block = ({ id, type, content, onChange, onRemove }) => {
     );
   };
 
-  return renderContent();
+  return (
+  <div
+    style={{
+      height: "100%",
+      overflow: "hidden",
+      display: "flex",
+      flexDirection: "column"
+    }}
+  >
+    {renderContent()}
+  </div>
+);
 };
 
 export default Block;

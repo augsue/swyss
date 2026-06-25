@@ -50,6 +50,7 @@ function ToDoList() {
           placeholder="Enter a new task..."
           value={newTask}
           onChange={handleInputChange}
+          onKeyPress={(e) => e.key === 'Enter' && addTask()}
         ></input>
 
         <button className="add-button" onClick={addTask}>
@@ -62,7 +63,7 @@ function ToDoList() {
           <li key={index}>
             <span className="text">{task}</span>
             <button className="delete-button" onClick={() => deleteTask(index)}>
-              Delete
+              X
             </button>
             <button className="move-button" onClick={() => moveTaskUp(index)}>
               ^
