@@ -1,6 +1,8 @@
 import { AArrowUp, AArrowDown } from "lucide-react";
 import { useState } from "react";
 import ToDoList  from "./ToDoList";
+import PaletteGenerator  from "./PaletteGenerator";
+
 
 const Block = ({ id, type, content, onChange, onRemove }) => {
   const [fontSize, setFontSize] = useState(14);
@@ -18,13 +20,13 @@ const Block = ({ id, type, content, onChange, onRemove }) => {
             placeholder="Escreva sua nota..."
           ></textarea>
           <button
-            className="font-button a-down"
+            className="action-button a-down"
             onClick={() => setFontSize((f) => Math.max(8, f - 2))}
           >
             <AArrowDown />
           </button>
           <button
-            className="font-button a-up"
+            className="action-button a-up"
             onClick={() => setFontSize((f) => Math.min(40, f + 2))}
           >
             <AArrowUp />
@@ -36,6 +38,12 @@ const Block = ({ id, type, content, onChange, onRemove }) => {
       return (
         <div> <ToDoList /> </div>
       );
+    }
+
+    if (type === "palette-generator") {
+      return (
+        <div> <PaletteGenerator /></div>
+      )
     }
 
     return (

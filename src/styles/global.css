@@ -169,16 +169,16 @@ body {
   height: 100%;
 }
 
-.font-button {
+.action-button {
   position: absolute;
   right: 0px;
-  background-color: #1e1e1e;
-  border: none;
   color: #c6d8d3;
   padding: 4px 8px;
   cursor: pointer;
   font-size: 12px;
   transition: all 0.2s ease;
+  background: transparent;
+  border: none;
 }
 .a-down {
   bottom: 30px;

@@ -36,7 +36,7 @@ export default function Render() {
           maxRows={4}
           rowHeight={50}
           isDraggable={true}
-          isResizable={true}
+          isResizable={false}
           width={1850}
           heigth={30}
           preventCollision={true}
