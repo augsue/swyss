@@ -10,8 +10,8 @@ export const useBlock = () => {
       type,
       x: 0,
       y: 0,
-      w: 5,
-      h: 2.2,
+      w: 4,
+      h: 1,
       content: "",
     };
     setBlocks([...blocks, newBlock]);

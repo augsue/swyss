@@ -2,6 +2,7 @@ import { AArrowUp, AArrowDown } from "lucide-react";
 import { useState } from "react";
 import ToDoList  from "./ToDoList";
 import PaletteGenerator  from "./PaletteGenerator";
+import TimeBlock from "./TimeBlock"
 
 
 const Block = ({ id, type, content, onChange, onRemove }) => {
@@ -43,6 +44,11 @@ const Block = ({ id, type, content, onChange, onRemove }) => {
     if (type === "palette-generator") {
       return (
         <div> <PaletteGenerator /></div>
+      )
+    }
+    if (type === "timer") {
+      return (
+        <div> <TimeBlock /></div>
       )
     }
 

@@ -37,8 +37,8 @@ export default function Render() {
           rowHeight={50}
           isDraggable={true}
           isResizable={false}
-          width={1850}
-          heigth={30}
+          width={1550}
+          heigth={20}
           preventCollision={true}
         >
           {blocks.map((block) => (

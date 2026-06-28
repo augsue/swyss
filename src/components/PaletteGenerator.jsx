@@ -63,7 +63,7 @@ export default function PaletteGenerator() {
             style={{
               background: color,
               flex: 1,
-              height: "35vh",
+              height: "100vh",
             }}
           >
             <div
