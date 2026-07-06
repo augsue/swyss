@@ -155,12 +155,6 @@ body {
   transition: 0s;
   transform: translate(0, 5%);
 }
-.move-sign {
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
-  font-size: 17px;
-}
 .note-toolbar {
   display: flex;
   gap: 6px;
@@ -186,6 +180,11 @@ body {
 .a-up {
   bottom: 60px;
   right: 0px;
+}
+.a-refresh {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
 }
 .to-do-list {
   display: flex;

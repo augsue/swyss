@@ -57,7 +57,6 @@ export default function Render() {
                 content={block.content}
                 onChange={(newContent) => updateBlockContent(block.id, newContent)}
               />
-              <div className="move-sign"><Expand color="#c6d8d3" size={15} /></div>
             </div>
           ))}
         </GridLayout>

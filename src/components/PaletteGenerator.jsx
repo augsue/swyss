@@ -1,6 +1,6 @@
 import usePalette from "../hooks/usePalette";
 import { useEffect } from "react";
-import { ClipboardCopy, CopyPlus, CopyMinus } from "lucide-react";
+import { ClipboardCopy, CopyPlus, CopyMinus, RefreshCcw } from "lucide-react";
 
 export default function PaletteGenerator() {
   const {
@@ -14,18 +14,6 @@ export default function PaletteGenerator() {
   useEffect(() => {
     generatePalette();
   }, []);
-
-  useEffect(() => {
-    const handleKeyPress = (e) => {
-      if (e.code === "Space") {
-        e.preventDefault();
-        generatePalette();
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyPress);
-    return () => window.removeEventListener("keydown", handleKeyPress);
-  }, [generatePalette]);
 
   return (
     <div
@@ -47,6 +35,12 @@ export default function PaletteGenerator() {
         onClick={() => setSelectedCount(Math.min(5, selectedCount + 1))}
       >
         <CopyPlus />
+      </button>
+      <button
+        className="action-button a-refresh"
+        onClick={generatePalette}
+      >
+        <RefreshCcw />
       </button>
 
       <div

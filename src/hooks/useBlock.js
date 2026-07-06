@@ -1,7 +1,14 @@
-import react, { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const useBlock = () => {
-  const [blocks, setBlocks] = useState([]);
+  const [blocks, setBlocks] = useState(() => {
+    const savedBlocks = localStorage.getItem("blocks");
+    return savedBlocks ? JSON.parse(savedBlocks) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("blocks", JSON.stringify(blocks));
+  }, [blocks]);
 
   // Adiciona bloco
   const addBlock = (type) => {
