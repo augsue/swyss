@@ -18,7 +18,7 @@ const usePalette = () => {
 
     try {
       const response = await fetch(
-        "http://colormind.io/api/",
+        "https://colormind.io/api/",
         {
           method: "POST",
           body: JSON.stringify({ input, model: "default" }),
