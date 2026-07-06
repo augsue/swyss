@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 
-function ToDoList() {
-  const [tasks, setTasks] = useState([]);
+function ToDoList({ initialTasks = [], onTasksChange }) {
+  const [tasks, setTasks] = useState(initialTasks);
   const [newTask, setNewTask] = useState("");
+
+  useEffect(() => {
+    onTasksChange(tasks);
+  }, [tasks]);
 
   function handleInputChange(event) {
     setNewTask(event.target.value);

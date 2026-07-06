@@ -37,7 +37,10 @@ const Block = ({ id, type, content, onChange, onRemove }) => {
     }
     if (type === "todo") {
       return (
-        <div> <ToDoList /> </div>
+        <div> <ToDoList
+        initialTasks={content ? JSON.parse(content) : []}
+        onTasksChange={(tasks) => onChange(JSON.stringify(tasks))}
+        /> </div>
       );
     }
 
