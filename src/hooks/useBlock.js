@@ -17,8 +17,8 @@ export const useBlock = () => {
       type,
       x: 0,
       y: 0,
-      w: 4,
-      h: 1,
+      w: 5.2,
+      h: 2,
       content: "",
     };
     setBlocks([...blocks, newBlock]);

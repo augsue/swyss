@@ -32,14 +32,12 @@ export default function Render() {
               })
             )
           }
-          maxCols={4}
-          maxRows={4}
+          cols={3}
           rowHeight={50}
-          isDraggable={true}
-          isResizable={false}
-          width={1550}
-          heigth={20}
+          width={window.innerWidth}
           preventCollision={true}
+          isResizable={false}
+          isDraggable={true}
         >
           {blocks.map((block) => (
             <div className="block" key={block.id}>
