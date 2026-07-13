@@ -9,6 +9,12 @@ import { Expand } from "lucide-react"
 
 export default function Render() {
   const { blocks, setBlocks, addBlock, removeBlock, updateBlockContent } = useBlock();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  // Atualiza o tamanho da janela quando redimensionada
+  window.addEventListener("resize", () => {
+    setWindowWidth(window.innerWidth);
+  });
 
   // Converte pro formato do GridLayout
   const layout = blocks.map((block) => ({
